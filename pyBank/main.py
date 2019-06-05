@@ -42,9 +42,26 @@ with open('budget_data.csv') as csvfile:
     print("Financial Analysis")
     print("---------------------------")
     print("Total Months:",numberOfMonth)
-    print("Total: $",totalProfits)
-    print("Average Change: $",averageChangeOfProfits)
-    print("Greatest Increase in Profits:",dates[greatestIncreaseDate],"$",\
-    max(profitChanges))
-    print("Greatest Decrease in Profits:",dates[greatestDecreaseDate],"$",\
-    min(profitChanges))
+    print("Total: $"+ str(totalProfits))
+    print("Average Change: $"+str(averageChangeOfProfits))
+    print("Greatest Increase in Profits:",dates[greatestIncreaseDate],"($"+\
+    str(max(profitChanges))+")")
+    print("Greatest Decrease in Profits:",dates[greatestDecreaseDate],"($"+\
+    str(min(profitChanges))+")")
+
+    with open("Financial Analysis.txt", "w") as textfile:
+        textfile.write("Financial Analysis")
+        textfile.write("\n")
+        textfile.write("---------------------------")
+        textfile.write("\n")
+        textfile.write("Total Months: " + str(numberOfMonth))
+        textfile.write("\n")
+        textfile.write("Total: $"+ str(totalProfits))
+        textfile.write("\n")
+        textfile.write("Average Change: $"+ str(averageChangeOfProfits))
+        textfile.write("\n")
+        textfile.write("Greatest Increase in Profits: "+\
+        dates[greatestIncreaseDate]+" $("+ str(max(profitChanges))+")")
+        textfile.write("\n")
+        textfile.write("Greatest Decrease in Profits: "+\
+        dates[greatestDecreaseDate]+" ($"+ str(min(profitChanges))+")")
